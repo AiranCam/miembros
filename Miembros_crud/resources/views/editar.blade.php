@@ -17,7 +17,8 @@
                 <label for="">Ministerio</label>
                 <input type="number" name="id_ministerios" min="1" max="6" class="form-control" required>
                 <br>
-                <a href="{{route('miembros.index')}}" class="btn btn-light" style="background-color:#e61b1b; color:white">Regresar</a>
+                <a href="{{route('miembros.index')}}" class="btn btn-light" style="background-color:#e61b1b; color:white">
+                <span class="fas fa-undo-alt"></span>Regresar</a>
                 <button  class="btn "style="background-color:#4e22ff;color:white">Actualizar miembro</button>
 
             </form>

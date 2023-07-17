@@ -26,8 +26,20 @@
                             <td>{{$item->telefono}}</td>
                             <td>{{$item->correo}}</td>
                             <td>{{$item->id_ministerios}}</td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                <form action="">
+                                    <button  class="btn btn-sm"style="background-color:#4e22ff;color:white">
+                                        <span class="fas fa-user-edit"></span>
+                                    </button>
+                                </form>
+                            </td>
+                            <td>
+                            <form action="">
+                                    <button class="btn btn-sm" style="background-color:#e61b1b; color:white">
+                                    <span class="fas fa-user-times"></span>
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -35,7 +47,7 @@
             </div>
         </p>
         <p>
-            <a href="{{route('miembros.create')}}" class="btn "style="background-color:#4e22ff;color:white">Agregar miembro</a>
+            <a href="{{route('miembros.create')}}" class="btn "style="background-color:#4e22ff;color:white"> <span class="fas fa-user-plus"></span> Agregar miembro</a>
         </p>
     </div>
 </div>
