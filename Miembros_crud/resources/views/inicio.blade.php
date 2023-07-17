@@ -1,6 +1,6 @@
 @extends('layout/plantilla')
 
-@section('tituloPagina','Crud con laravel 8')
+@section('tituloPagina','Miembros')
 
 @section('contenido')
 <div class="card">
@@ -36,7 +36,7 @@
                             <td>
                             <form action="">
                                     <button class="btn btn-sm" style="background-color:#e61b1b; color:white">
-                                    <span class="fas fa-user-times"></span>
+                                    <span class="fas fa-user-minus"></span>
                                     </button>
                                 </form>
                             </td>

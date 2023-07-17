@@ -18,7 +18,14 @@ class MiembrosController extends Controller
     }
     public function store(Request $request)
     {
-        //
+        $miembro = new Miembros();
+        $miembro->nombre = $request->post('nombre');
+        $miembro->telefono = $request->post('telefono');
+        $miembro->correo = $request->post('correo');
+        $miembro->id_ministerios = $request->post('id_ministerios');
+        $miembro->save();
+
+        return redirect()->route("miembros.index")->with("success", "Aregado correctamente!!");
     }
     public function show(miembros $miembros)
     {

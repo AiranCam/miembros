@@ -1,6 +1,6 @@
 @extends('layout/plantilla')
 
-@section('tituloPagina','Actualizar Persona')
+@section('tituloPagina','Actualizar Miembro')
 
 @section('contenido')
 <div class="card">
@@ -18,8 +18,8 @@
                 <input type="number" name="id_ministerios" min="1" max="6" class="form-control" required>
                 <br>
                 <a href="{{route('miembros.index')}}" class="btn btn-light" style="background-color:#e61b1b; color:white">
-                <span class="fas fa-undo-alt"></span>Regresar</a>
-                <button  class="btn "style="background-color:#4e22ff;color:white">Actualizar miembro</button>
+                <span class="fas fa-undo-alt"></span> Regresar</a>
+                <button  class="btn "style="background-color:#4e22ff;color:white"> <span class="fas fa-user-edit"></span> Actualizar miembro</button>
 
             </form>
         </p>
