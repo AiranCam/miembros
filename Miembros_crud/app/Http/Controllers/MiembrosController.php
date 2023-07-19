@@ -18,29 +18,42 @@ class MiembrosController extends Controller
     }
     public function store(Request $request)
     {
-        $miembro = new Miembros();
+        $miembros = new Miembros();
+        $miembros->nombre = $request->post('nombre');
+        $miembros->telefono = $request->post('telefono');
+        $miembros->correo = $request->post('correo');
+        $miembros->id_ministerios = $request->post('id_ministerios');
+        $miembros->save();
+
+        return redirect()->route("miembros.index")->with("success", "Miembro Agregado!!");
+    }
+    public function show($id_miembros)
+    {
+        $miembros = Miembros::find($id_miembros);
+        return view("eliminar", compact('miembros'));
+    }
+    public function edit($id_miembros)
+    {
+        $miembros = Miembros::find($id_miembros);
+        return view("editar", compact('miembros'));
+    }
+    public function update(Request $request, $id_miembros)
+    {
+        //
+        $miembro = Miembros::find($id_miembros);
         $miembro->nombre = $request->post('nombre');
         $miembro->telefono = $request->post('telefono');
         $miembro->correo = $request->post('correo');
         $miembro->id_ministerios = $request->post('id_ministerios');
         $miembro->save();
 
-        return redirect()->route("miembros.index")->with("success", "Aregado correctamente!!");
+        return redirect()->route("miembros.index")->with("success", "Editado con exito!!");
+
     }
-    public function show(miembros $miembros)
+    public function destroy($id_miembros)
     {
-        return view('eliminar');
-    }
-    public function edit(miembros $miembros)
-    {
-        Return view('editar');
-    }
-    public function update(Request $request, miembros $miembros)
-    {
-        //
-    }
-    public function destroy(miembros $miembros)
-    {
-        //
+        $miembro = Miembros::find($id_miembros);
+        $miembro->delete();
+        return redirect()->route("miembros.index")->with("success", "Eliminado con exito!!");
     }
 }
